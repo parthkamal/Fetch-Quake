@@ -1,4 +1,5 @@
 package com.parth.quakereport;
+import com.parth.quakereport.adapters.earthquakeAdapters;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,19 +16,39 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //defining the data source to link it to the adapter
-        ArrayList<String> earthquakes = new ArrayList<>();
-        earthquakes.add("San Francisco");
-        earthquakes.add("London");
-        earthquakes.add("Tokyo");
-        earthquakes.add("Mexico City");
-        earthquakes.add("Moscow");
-        earthquakes.add("Rio de Janeiro");
-        earthquakes.add("Paris");
+        //defining the data source of an object named earthquake to link it to the adapter
+       ArrayList<earthquake> earthquakes =new ArrayList<>();
+       earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+       earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+       earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+       earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+       earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+       earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
+        earthquakes.add(new earthquake((int) 7.2,"San francisco","Feb 2, 2016"));
 
 
-        //declaring the standard adapter and provided the context and the layout resource to it
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,R.layout.llist_items,earthquakes);
+
+        //declaring the custom adapter for the earthquake object and providing the list of resources and layout file to it
+        earthquakeAdapters adapter =new earthquakeAdapters(getApplicationContext(),R.layout.llist_items,earthquakes);
+
+
 
         //providing the list view to add the adapter to it
         ListView listView =findViewById(R.id.earthquakes_list);
